@@ -6,16 +6,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import ru.netology.authorization_service.service.AuthorizationService;
 import ru.netology.authorization_service.permissions.Authorities;
-
 import java.util.List;
 
 @RestController
 public class AuthorizationController {
-    @Autowired
     AuthorizationService service;
-
-    public void setService(AuthorizationService service) {
-        this.service = service;
+    public AuthorizationController(AuthorizationService authorizationService){
+        this.service = authorizationService;
     }
 
     @GetMapping("/authorize")
