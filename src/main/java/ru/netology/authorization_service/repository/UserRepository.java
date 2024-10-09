@@ -13,8 +13,7 @@ import java.util.concurrent.ConcurrentHashMap;
 public class UserRepository {
     private ConcurrentHashMap<Credentials, Authorities> concurrentHashMap = new ConcurrentHashMap<>();
 
-    public List<Authorities> getUserAuthorities(String user, String password) {
-        Credentials credentials = new Credentials(user, password);
+    public List<Authorities> getUserAuthorities(Credentials credentials) {
         for (Map.Entry<Credentials, Authorities> entryMap : concurrentHashMap.entrySet()) {
             if (entryMap.getKey().equals(credentials)) {
                 return List.of(entryMap.getValue());

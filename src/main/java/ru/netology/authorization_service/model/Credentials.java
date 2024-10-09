@@ -13,12 +13,20 @@ public class Credentials {
         return username;
     }
 
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
     public String getPassword() {
         return password;
     }
 
     public boolean equals(Credentials credentials) {
-        if(credentials.getUsername().equals(this.username) && credentials.getPassword().equals(this.password)) {
+        if (credentials.getUsername().equals(this.username) && credentials.getPassword().equals(this.password)) {
             return true;
         } else {
             return false;
